@@ -1,3 +1,5 @@
+// Cris to convert to Realtor Model.
+
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
