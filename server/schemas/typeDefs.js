@@ -5,8 +5,7 @@ const typeDefs = gql`
     _id: ID
     name: String
   }
-
-  type Product {
+  type Realtor {
     _id: ID
     name: String
     description: String
@@ -15,13 +14,11 @@ const typeDefs = gql`
     price: Float
     category: Category
   }
-
   type Order {
     _id: ID
     purchaseDate: String
-    products: [Product]
+    realtors: [Realtor]
   }
-
   type User {
     _id: ID
     firstName: String
@@ -29,32 +26,27 @@ const typeDefs = gql`
     email: String
     orders: [Order]
   }
-
   type Auth {
     token: ID
     user: User
   }
-
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    realtors(category: ID, name: String): [Realtor]
+    realtor(_id: ID!): Realtor
     user: User
     order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    checkout(realtors: [ID]!): Checkout
   }
-
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(products: [ID]!): Order
+    addOrder(realtors: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateRealtor(_id: ID!, quantity: Int!): Realtor
     login(email: String!, password: String!): Auth
   }
-
   type Checkout {
     session: ID
   }
 `;
-
 module.exports = typeDefs;
