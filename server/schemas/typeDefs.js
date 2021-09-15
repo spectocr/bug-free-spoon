@@ -1,7 +1,13 @@
 const { gql } = require('apollo-server-express');
-
 const typeDefs = gql`
-  type Category {
+ type Reactions {
+   _id: ID
+   reactionBody: String
+   username: String
+   createdAt: Date
+   default: Date.now
+ }
+  type Agencies {
     _id: ID
     name: String
   }
@@ -12,7 +18,7 @@ const typeDefs = gql`
     image: String
     quantity: Int
     price: Float
-    category: Category
+    agencies: Agencies
   }
   type Order {
     _id: ID
@@ -31,8 +37,8 @@ const typeDefs = gql`
     user: User
   }
   type Query {
-    categories: [Category]
-    realtors(category: ID, name: String): [Realtor]
+    agencies: [Agencies]
+    realtors(agencies: ID, name: String): [Realtor]
     realtor(_id: ID!): Realtor
     user: User
     order(_id: ID!): Order
@@ -44,6 +50,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateRealtor(_id: ID!, quantity: Int!): Realtor
     login(email: String!, password: String!): Auth
+    reaction(_id: ID!, //userid, realtorid, boolean value t/f up/down): User
   }
   type Checkout {
     session: ID
