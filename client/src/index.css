@@ -80,7 +80,7 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background: #22577a;
 }
 
 header a {
@@ -144,6 +144,7 @@ input:focus {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: space-between; */
 }
 
 .space-between {
