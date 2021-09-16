@@ -4,9 +4,8 @@ const dateFormat = require('../utils/dateFormat');
 const reactionSchema = new Schema(
   {
     reactionBody: {
-      type: String,
-      required: true,
-      maxlength: 280
+      type: Boolean,
+      required: true
     },
     username: {
       type: String,

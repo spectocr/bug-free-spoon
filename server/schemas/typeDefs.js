@@ -50,7 +50,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateRealtor(_id: ID!, quantity: Int!): Realtor
     login(email: String!, password: String!): Auth
-    reaction(_id: ID!, //userid, realtorid, boolean value t/f up/down): User
+    reaction(_id: ID!, realtors: [ID]!, users: [ID]!, reactionBody: boolean!): User
   }
   type Checkout {
     session: ID
