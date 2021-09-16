@@ -22,7 +22,7 @@ const resolvers = {
     realtor: async (parent, { _id }) => {
       return await Realtor.findById(_id).populate('agencies');
     },
-    reactions: async () => {
+    reactions: async (parent, { _id}) => {
       return await Realtor.findById(_id).populate('reactions');
     }
     // user: async (parent, args, context) => {
@@ -85,6 +85,13 @@ const resolvers = {
       const user = await User.create(args);
       const token = signToken(user);
       return { token, user };
+    },
+    reactions: async (parent, args, context) => {
+      if (context.user) {
+        await User.find
+
+        //query your realtor to get ID, update the reaction, the reaction will need to be associated to that reactions array 
+      }
     },
     // addOrder: async (parent, { products }, context) => {
     //   console.log(context);
