@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Realtor, Agencies } = require('../models');
+const { User, Realtor, Agencies, Reactions } = require('../models');
 db.once('open', async () => {
   await Agencies.deleteMany();
   //change this to agencies.
@@ -43,5 +43,11 @@ db.once('open', async () => {
     password: 'password12345'
   });
   console.log('users seeded');
+  await Reactions.deleteMany();
+  await Reactions.create({
+    reactionBody: true,
+    email: 'eholt@testmail.com'
+  }); 
+  console.log('reactions seeded')
   process.exit();
 });

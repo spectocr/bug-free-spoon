@@ -17,7 +17,7 @@ const realtorSchema = new Schema({
   agency: {
     type: String
   },
-  reactions: [Reactions.schema]
+  // reactions: [Reactions.schema]
 });
 const Realtor = mongoose.model('Realtor', realtorSchema);
 module.exports = Realtor;

@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
 const reactionSchema = new Schema(
@@ -6,7 +7,7 @@ const reactionSchema = new Schema(
       type: Boolean,
       required: true
     },
-    username: {
+    email: {
       type: String,
       required: true
     },
@@ -22,4 +23,5 @@ const reactionSchema = new Schema(
   }
 );
 
-module.exports = reactionSchema;
+const Reactions = mongoose.model('Reactions', reactionSchema);
+module.exports = Reactions;

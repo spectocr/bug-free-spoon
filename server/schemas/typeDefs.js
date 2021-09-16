@@ -3,7 +3,7 @@ const typeDefs = gql`
  type Reactions {
    _id: ID
    reactionBody: Boolean
-   username: String
+   email: String
  }
   type Agencies {
     _id: ID
@@ -37,6 +37,7 @@ const typeDefs = gql`
   }
   type Query {
     agencies: [Agencies]
+    reactions: [Reactions]
     realtors(agencies: ID, name: String): [Realtor]
     realtor(_id: ID!): Realtor
     user: User
