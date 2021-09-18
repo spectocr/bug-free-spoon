@@ -1,6 +1,6 @@
 import React from "react";
 import ResourceItem from './ResourceItem';
-// import classes from './MeetupList.module.css';
+
 
 function ResourceList(props) {
   return (
@@ -9,7 +9,7 @@ function ResourceList(props) {
         <ResourceItem
           key={resource.id}
           id={resource.id}
-          image={resource.volumeInfo.imageLinks.thumbnail}
+          // image={resource.volumeInfo.imageLinks.thumbnail}
           title={resource.volumeInfo.title}
           author={resource.volumeInfo.authors}
           description={resource.volumeInfo.description}
