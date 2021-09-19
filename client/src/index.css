@@ -16,6 +16,7 @@
 html,
 body {
   min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -26,6 +27,8 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  background: lightsteelblue;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 h1,
@@ -34,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -96,7 +99,9 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: lightskyblue;
+  background-color: palegoldenrod;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 button:hover {
@@ -132,6 +137,56 @@ input {
 input:focus {
   border: 1px solid var(--secondary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.imgName {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.txt {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.locDiv {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
 }
 
 .container {
@@ -178,6 +233,7 @@ input:focus {
 .px-1 {
   padding-right: var(--spacing-one);
   padding-left: var(--spacing-one);
+  padding: 20px;
 }
 
 .px-2 {
