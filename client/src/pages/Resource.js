@@ -4,36 +4,34 @@ import React from "react";
 import ResourceList from "../components/ResourceList/ResourceList";
 
 function Resource() {
-  
   const [loadedResources, setLoadedResources] = useState([]);
 
   useEffect(() => {
-    return () => setLoadedResources(loadedResources);
-  },[]);
+    const searchGoogleBooks = async () => {
+      return fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=subject:home_buying`
+      );
+    };
 
-  const searchGoogleBooks = () => {
-    return fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=subject:real_estate`
-    );
-  };
+    const HandleResource = async () => {
+      // event.preventDefault();
+      try {
+        const response = await searchGoogleBooks();
+        const { items } = await response.json();
+        console.log(items);
+
+        setLoadedResources(items);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    HandleResource();
+
+    return () => setLoadedResources(loadedResources);
+  }, []);
 
   // console.log(searchGoogleBooks);
 
-  const HandleResource = async (event) => {
-    // event.preventDefault();
-    try {
-
-      
-      const response = await searchGoogleBooks();
-      const { items } = await response.json();
-      console.log(items);
-
-      setLoadedResources(items);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  HandleResource();
   // console.log(loadedResources);
   return (
     <section>
@@ -66,7 +64,7 @@ export default Resource;
 //         // }
 //         console.log(resources);
 //         setLoadedResources(resources);
-        
+
 //       });
 //   }, []);
 
