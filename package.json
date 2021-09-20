@@ -14,6 +14,7 @@
   "author": "Group 3",
   "license": "ISC",
   "dependencies": {
+    "concurrent": "^0.3.2",
     "graphql": "^15.5.3",
     "if-env": "^1.0.4"
   },

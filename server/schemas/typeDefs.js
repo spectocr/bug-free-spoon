@@ -1,6 +1,12 @@
 const { gql } = require('apollo-server-express');
-
 const typeDefs = gql`
+
+ type Reactions {
+   _id: ID
+   reactionBody: Boolean
+   email: String
+ }
+
   type Agencies {
     _id: ID
     name: String
@@ -14,14 +20,14 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     agencies: Agencies
-  }
+    reactions: [Reactions]
 
+  }
   type Order {
     _id: ID
     purchaseDate: String
     realtors: [Realtor]
   }
-
   type User {
     _id: ID
     firstName: String
@@ -29,32 +35,32 @@ const typeDefs = gql`
     email: String
     orders: [Order]
   }
-
   type Auth {
     token: ID
     user: User
   }
-
   type Query {
     agencies: [Agencies]
+
+    reactions: [Reactions]
+
+
     realtors(agencies: ID, name: String): [Realtor]
     realtor(_id: ID!): Realtor
     user: User
     order(_id: ID!): Order
     checkout(realtors: [ID]!): Checkout
   }
-
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(realtors: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateRealtor(_id: ID!, quantity: Int!): Realtor
     login(email: String!, password: String!): Auth
+    reactions(_id: ID!, realtors: [ID]!, users: [ID]!, reactionBody: Boolean!): User
   }
-
   type Checkout {
     session: ID
   }
 `;
-
 module.exports = typeDefs;

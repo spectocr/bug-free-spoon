@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
+
 const { Schema } = mongoose;
+
 
 const agenciesSchema = new Schema({
   name: {
@@ -10,6 +12,8 @@ const agenciesSchema = new Schema({
   }
 });
 
+
 const Agencies = mongoose.model('Agencies', agenciesSchema);
 
 module.exports = Agencies;
+
