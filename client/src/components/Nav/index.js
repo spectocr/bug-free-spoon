@@ -34,6 +34,11 @@ function Nav() {
               Login
             </Link>
           </li>
+          <li className="mx-1">
+            <Link to='./resource'>
+              Resource
+            </Link>
+          </li>
         </ul>
       );
     }
@@ -43,8 +48,8 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <span role="img" aria-label="realtor-house">🏡</span>
+          Realtor-Rater
         </Link>
       </h1>
 
