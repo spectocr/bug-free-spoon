@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
+
+
 const { Schema } = mongoose;
+
+
 const agenciesSchema = new Schema({
   name: {
     type: String,
@@ -7,5 +11,9 @@ const agenciesSchema = new Schema({
     trim: true
   }
 });
+
+
 const Agencies = mongoose.model('Agencies', agenciesSchema);
+
 module.exports = Agencies;
+

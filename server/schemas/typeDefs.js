@@ -1,14 +1,17 @@
 const { gql } = require('apollo-server-express');
 const typeDefs = gql`
+
  type Reactions {
    _id: ID
    reactionBody: Boolean
    email: String
  }
+
   type Agencies {
     _id: ID
     name: String
   }
+
   type Realtor {
     _id: ID
     name: String
@@ -18,6 +21,7 @@ const typeDefs = gql`
     price: Float
     agencies: Agencies
     reactions: [Reactions]
+
   }
   type Order {
     _id: ID
@@ -37,7 +41,10 @@ const typeDefs = gql`
   }
   type Query {
     agencies: [Agencies]
+
     reactions: [Reactions]
+
+
     realtors(agencies: ID, name: String): [Realtor]
     realtor(_id: ID!): Realtor
     user: User
