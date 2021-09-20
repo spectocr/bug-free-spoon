@@ -1,23 +1,17 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Realtor, Agencies } = require('../models');
 
 db.once('open', async () => {
-  await Category.deleteMany();
 
-  const categories = await Category.insertMany([
-    { name: 'North Jersey' },
-    { name: 'Central Jersey' },
-    { name: 'South Jersey' },
-    { name: 'NYC' },
-    { name: 'Greater Philadelphia Area' }
   ]);
 
-  console.log('categories seeded');
+  console.log('agencies seeded');
 
-  await Product.deleteMany();
+  await Realtor.deleteMany();
 
-  const products = await Product.insertMany([
+  const realtors = await Realtor.insertMany([
     {
+
       name: 'Royale Titas',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
@@ -124,22 +118,18 @@ db.once('open', async () => {
       price: 9.99,
       quantity: 600
     }
+
   ]);
 
-  console.log('products seeded');
+  console.log('realtors seeded');
 
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
-    orders: [
-      {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
+    firstName: 'Cris ',
+    lastName: 'Spector',
+    email: 'highstakes22@gmail.com',
+    password: 'test1'
   });
 
   await User.create({
