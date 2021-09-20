@@ -1,19 +1,19 @@
 // Cris back end work
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Realtor, Category} = require('../models');
+const { User, Realtor, Agencies} = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    categories: async () => { // will need to change/remove this.
-      return await Category.find();
+    agencies: async () => { // will need to change/remove this.
+      return await Agencies.find();
     },
-    realtors: async (parent, { category, name }) => {
+    realtors: async (parent, { agencies, name }) => {
       const params = {};
 
-      if (category) {
-        params.category = category;
+      if (agencies) {
+        params.agencies = agencies;
       }
 
       if (name) {
@@ -22,10 +22,10 @@ const resolvers = {
         };
       }
 
-      return await Realtor.find(params).populate('category');
+      return await Realtor.find(params).populate('agencies');
     },
     realtor: async (parent, { _id }) => {
-      return await Realtor.findById(_id).populate('category');
+      return await Realtor.findById(_id).populate('agencies');
     },
     // user: async (parent, args, context) => {
     //   if (context.user) {

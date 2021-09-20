@@ -1,19 +1,19 @@
 const db = require('./connection');
-const { User, Realtor, Category } = require('../models');
+const { User, Realtor, Agencies } = require('../models');
 
 db.once('open', async () => {
-  await Category.deleteMany();
+  await Agencies.deleteMany();
 
   //change this to agencies.
-  const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+  const agencies = await Agencies.insertMany([
+    { name: 'Century21' },
+    { name: 'YoMommasHouse' },
+    { name: 'ReMax' },
+    { name: 'YogurtBoysShacks' },
+    { name: 'TatertotsHouses' }
   ]);
 
-  console.log('categories seeded');
+  console.log('agencies seeded');
 
   await Realtor.deleteMany();
 
@@ -23,7 +23,14 @@ db.once('open', async () => {
       description:
         'The best Realtor in the tristate.',
       image: 'cookie-tin.jpg',
-      category: categories[0]._id,
+      agencies: agencies[0]._id,
+    },
+    {
+      name: 'John Moe',
+      description:
+        'The best Realtor in the tristate and more.',
+      image: 'cookie-tin.jpg',
+      agencies: agencies[0]._id,
     },
     
   ]);
