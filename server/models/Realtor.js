@@ -25,7 +25,7 @@ const realtorSchema = new Schema({
 const Realtor = mongoose.model('Realtor', realtorSchema);
 module.exports = Realtor;
 
-  }
-});
+  
+
 
 
