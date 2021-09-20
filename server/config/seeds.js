@@ -1,12 +1,8 @@
 const db = require('./connection');
 
-const { User, Realtor, Agencies } = require('../models');
+const { User, Realtor } = require('../models');
 
 db.once('open', async () => {
-
-  ]);
-
-  console.log('agencies seeded');
 
   await Realtor.deleteMany();
 
