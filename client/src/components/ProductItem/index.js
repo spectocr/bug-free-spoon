@@ -54,7 +54,7 @@ function ProductItem(item) {
         </div>
         {/* <span>${price}</span> */}
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToCart}>Make a Donation</button>
     </div>
   );
 }

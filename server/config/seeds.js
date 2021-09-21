@@ -93,7 +93,7 @@ db.once('open', async () => {
       name: 'Spinning Top',
       category: categories[4]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'stone-cold.jpg',
+      image: 'spinning-top.jpg',
       price: 1.99,
       quantity: 1000
     },
@@ -111,7 +111,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'ronda.jpg',
+      image: 'nunes.jpg',
       price: 7.99,
       quantity: 100
     },
