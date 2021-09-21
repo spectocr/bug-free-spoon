@@ -1,6 +1,6 @@
 const db = require('./connection');
 
-const { User, Realtor } = require('../models');
+const { User, Realtor, Agencies } = require('../models');
 
 db.once('open', async () => {
 
