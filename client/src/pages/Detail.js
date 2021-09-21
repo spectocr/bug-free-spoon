@@ -112,6 +112,8 @@ function Detail(item) {
           <p>
             <strong> Donation:</strong>
             ${currentProduct.price}
+            <div>👍 Positively Rate</div>
+            <div>👎 Negatively Rate</div>
             {" "}
             {/* <div>
               {quantity} {("house", quantity)} sold
