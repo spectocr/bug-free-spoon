@@ -12,18 +12,20 @@ import {
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
-
+// import { pluralize } from "../../src/utils";
 import Cart from '../components/Cart';
 
 import { idbPromise } from "../utils/helpers";
 
 import { useSelector, useDispatch } from "react-redux";
 
-function Detail() {
+function Detail(item) {
   // const [state, dispatch] = useStoreContext();
   const state = useSelector(state => state);
 
-  const dispatch = useDispatch(); 
+  const { image, name, _id, price, quantity } = item;
+
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({})
@@ -36,14 +38,14 @@ function Detail() {
     // already in global store
     if (products.length) {
       setCurrentProduct(products.find(product => product._id === id));
-    } 
+    }
     // retrieved from server
     else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
       });
-  
+
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });
@@ -61,7 +63,7 @@ function Detail() {
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id)
-  
+
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -88,7 +90,7 @@ function Detail() {
       type: REMOVE_FROM_CART,
       _id: currentProduct._id
     });
-  
+
     // upon removal from cart, delete the item from IndexedDB using the `currentProduct._id` to locate what to remove
     idbPromise('cart', 'delete', { ...currentProduct });
   };
@@ -98,7 +100,7 @@ function Detail() {
       {currentProduct ? (
         <div className="container my-1">
           <Link to="/">
-            ← Back to Products
+            ← Back to Agents
           </Link>
 
           <h2>{currentProduct.name}</h2>
@@ -108,16 +110,21 @@ function Detail() {
           </p>
 
           <p>
-            <strong>Price:</strong>
+            <strong> Donation:</strong>
             ${currentProduct.price}
+            <div>👍 Positively Rate</div>
+            <div>👎 Negatively Rate</div>
             {" "}
-            <button onClick={addToCart}>Add to cart</button>
-            <button 
+            {/* <div>
+              {quantity} {("house", quantity)} sold
+            </div> */}
+            <button onClick={addToCart}>Make a Donation</button>
+            {/* <button 
                 disabled={!cart.find(p => p._id === currentProduct._id)} 
                 onClick={removeFromCart}
               >
                 Remove from Cart
-              </button>
+              </button> */}
           </p>
 
           <img
