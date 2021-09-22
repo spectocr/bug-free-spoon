@@ -9,6 +9,8 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Resource from "./pages/Resource";
+import Market from "./pages/Market";
 import Nav from "./components/Nav";
 import Success from "./pages/Success";
 // import { StoreProvider } from "./utils/GlobalState";
@@ -37,6 +39,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
+              <Route exact path="/resource" component={Resource} />
+              <Route exact path="/market" component={Market} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/success" component={Success} />
