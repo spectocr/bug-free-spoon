@@ -23,6 +23,12 @@ const resolvers = {
 
       return await Product.find(params).populate('category');
     },
+
+    reactions: async () => {
+      return await Reactions.find();
+      // Realtor.findById(_id).populate('reactions');
+    },
+
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
@@ -95,6 +101,13 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    reactions: async (parent, args, context) => {
+      if (context.user) {
+        console.log('content in the future');
+
+        //query your realtor to get ID, update the reaction, the reaction will need to be associated to that reactions array // similar to line 100 
+      }
     },
     addOrder: async (parent, { products }, context) => {
       console.log(context);

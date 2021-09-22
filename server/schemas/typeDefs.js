@@ -6,6 +6,12 @@ const typeDefs = gql`
     name: String
   }
 
+  type Reactions {
+    _id: ID
+    reactionBody: Boolean
+    email: String
+  }
+
   type Product {
     _id: ID
     name: String
@@ -14,6 +20,7 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     category: Category
+    reactions: [Reactions]
   }
 
   type Order {
@@ -37,6 +44,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
+    reactions: [Reactions]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
@@ -50,6 +58,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+    reactions(_id: ID!, realtors: [ID]!, users: [ID]!, reactionBody: Boolean!): User
   }
 
   type Checkout {
