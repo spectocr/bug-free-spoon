@@ -111,7 +111,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Sed sed sem finibus, sagittis justo nec, posuere nunc.',
-      image: 'nunes.jpg',
+      image: 'teddy-bear.jpg',
       price: 20.00,
       quantity: 100
     },
