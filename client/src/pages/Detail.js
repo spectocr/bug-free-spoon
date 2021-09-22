@@ -100,7 +100,7 @@ function Detail(item) {
       {currentProduct ? (
         <div className="container my-1">
           <Link to="/">
-            ← Back to Products
+            ← Back to Realtors
           </Link>
 
           <h2>{currentProduct.name}</h2>
