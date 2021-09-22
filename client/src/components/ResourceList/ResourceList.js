@@ -4,7 +4,7 @@ import ResourceItem from './ResourceItem';
 
 function ResourceList(props) {
   return (
-    <ul>
+    <div className="flex-row">
       {props.resources.map((resource) => (
         <ResourceItem
           key={resource.id}
@@ -15,7 +15,7 @@ function ResourceList(props) {
           description={resource.volumeInfo.description}
         />
       ))}
-    </ul>
+    </div>
   );
 }
 
