@@ -152,6 +152,7 @@ db.once('open', async () => {
   console.log('users seeded');
 
   await Reactions.deleteMany();
+  
   await Reactions.create({
     reactionBody: true,
     email: 'eholt@testmail.com'

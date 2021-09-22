@@ -114,6 +114,7 @@ function Detail(item) {
             ${currentProduct.price}
             <div>👍 Positively Rate</div>
             <div>👎 Negatively Rate</div>
+            <div>Current Rating: <span> 92</span></div>
             {" "}
             {/* <div>
               {quantity} {("house", quantity)} sold

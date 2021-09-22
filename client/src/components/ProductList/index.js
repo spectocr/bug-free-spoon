@@ -53,7 +53,11 @@ function ProductList() {
   }
 
   return (
+
     <div className="my-2">
+          <p>
+      Welcome to Realtor-Rater! Here at WWE-HOMES finding your home isn't our only passion. Donate to our realtors charity of choice by selecting the realtor you've worked with in the past. Rate your realtor using the thumbs up or thumbs down button on their page!
+    </p>
       {/* <h2>Our Agents </h2> */}
       {state.products.length ? (
         <div className="flex-row">
@@ -69,7 +73,7 @@ function ProductList() {
             ))}
         </div>
       ) : (
-        <h3>You haven't added any products yet!</h3>
+        <h3>You haven't added any donations yet!</h3>
       )}
       { loading ? 
       <img src={spinner} alt="loading" />: null}
