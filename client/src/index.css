@@ -188,6 +188,7 @@ input:focus {
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  margin-top: 25px;
 }
 
 .container {
