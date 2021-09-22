@@ -34,9 +34,9 @@ function Resource() {
 
   // console.log(loadedResources);
   return (
-    <section>
+    <div>
       <ResourceList resources={loadedResources} />
-    </section>
+    </div>
   );
 }
 
