@@ -1,25 +1,37 @@
 import React from "react";
 
-
-// import Button from "react-bootstrap/Button";
+// import { Button } from "react-bootstrap";
 // import Card from "react-bootstrap/Card";
+
+
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 function ResourceItem(props) {
   return (
-   
+    // <Card border="primary" style={{ width: "18rem" }}>
+    //   <Card.Img variant="top" src="holder.js/100px180" />
+    //   <Card.Body>
+    //     <Card.Title>{props.title}</Card.Title>
+    //     <Card.Text>{props.description}</Card.Text>
+    //     <Button variant="primary">Purchase</Button>
+    //   </Card.Body>
+    // </Card>
 
-    
-    <div className="card" style={{width: '18rem'}}>
-  <img src="..." className="card-img-top" alt={props.title}/>
-  <div className="card-body">
-    <h5 className="card-title">{props.title}</h5>
-    <p className="card-text">{props.description}</p>
-    <a href="#" className="btn btn-primary">Purchase</a>
-    {/* <Button variant="primary">Primary</Button> */}
-  </div>
-</div>
-    
-    
+
+    <Card className="text-center">
+  <Card.Header><h5>{props.title}</h5></Card.Header>
+  <Card.Body>
+  <Card.Img variant="top" src="holder.js/100px180" />
+    <Card.Title>{props.author}</Card.Title>
+    <Card.Text>
+      {props.description}
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+  <Card.Footer className="text-muted">2 days ago</Card.Footer>
+</Card>
+
   );
 }
 
