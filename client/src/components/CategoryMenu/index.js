@@ -43,9 +43,11 @@ function CategoryMenu() {
   };
 
   return (
+
     <div className="locDiv">
       
      
+
       {categories.map(item => (
         <button
           key={item._id}
