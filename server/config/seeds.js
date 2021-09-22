@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Reactions } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -150,6 +150,13 @@ db.once('open', async () => {
   });
 
   console.log('users seeded');
+
+  await Reactions.deleteMany();
+  await Reactions.create({
+    reactionBody: true,
+    email: 'eholt@testmail.com'
+  }); 
+  console.log('reactions seeded')
 
   process.exit();
 });
