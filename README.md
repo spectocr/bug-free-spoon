@@ -23,7 +23,8 @@ Interactive MERN SPA Project: his project will be your best opportunity to show 
   For project creation
   
   ## Link
-  https://sheltered-thicket-69845.herokuapp.com/
+  https://sheltered-thicket-69845.herokuapp.com/ </br>
+  https://docs.google.com/presentation/d/1X79e_GEQaBnJxhiTdNExcli4aW0BmVkEIHneOrqVx4/edit#slide=id.gebf589d6f4_0_1
 
   ## Contribution
   Chris Spector </br>
